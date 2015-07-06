@@ -1,0 +1,7 @@
+<h1><%= @question.question %></h1>
+
+<h3><%= @question.body %></h3>
+
+<h4>Asked by: <%= @user.email %></h4>
+
+<%= link_to "Edit Question", edit_user_question_path(@user, @question) %>

@@ -7,5 +7,6 @@ FactoryGirl.define do
   factory(:question) do
     question('What is 1 + 1 equal to?')
     body("I've been at this for days. Please help.")
+    user_id(0)
   end
 end
