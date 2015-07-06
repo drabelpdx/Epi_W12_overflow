@@ -7,6 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= flash[:notice] %>
+  <%= flash[:alert] %>
+  <br>
+  <% if current_user == nil %>
+    <%= link_to 'Log In', log_in_path %>
+    <%= link_to 'Register', new_user_path %>
+
+  <% else %>
+    Logged in as: <%= current_user.email  %>
+    <br>
+    <%= link_to "Log Out", log_out_path %>
+  <% end %>
+<br>
+
+
 
 <%= yield %>
 
