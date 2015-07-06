@@ -1,3 +1,4 @@
+<%= render "layouts/errors", :object => @question %>
 
 <%= form_for [current_user, @question] do |f| %>
   <%= f.label :question %>
