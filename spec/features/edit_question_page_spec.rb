@@ -9,7 +9,6 @@ describe "the edit question process" do
     fill_in 'Email', :with => 'ian@ian.com'
     fill_in 'Password', :with => 'password'
     click_on 'Log in'
-
     click_on "What is 1 + 1 equal to?"
     click_on 'Edit Question'
     fill_in 'Question', :with => 'What is 2 + 2 equal to?'

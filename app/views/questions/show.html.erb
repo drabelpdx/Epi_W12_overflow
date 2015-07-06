@@ -4,4 +4,9 @@
 
 <h4>Asked by: <%= @user.email %></h4>
 
-<%= link_to "Edit Question", edit_user_question_path(@user, @question) %>
+<% if @question.user_id == current_user.id %>
+  <%= link_to "Edit Question", edit_user_question_path(@user, @question) %>
+  <%= link_to "Delete Question", user_question_path(@user, @question),
+                                  :data => {:confirm => "Are you sure?",
+                                            :method => 'delete'}%>
+<% end %>

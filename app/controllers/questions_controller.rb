@@ -34,6 +34,13 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find(params[:user_id])
+    @question = Question.find(params[:id])
+    @question.destroy
+    flash[:notice] = "Your question has been deleted."
+    redirect_to '/'
+  end
 
 
   private
