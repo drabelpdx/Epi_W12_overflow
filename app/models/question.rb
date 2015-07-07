@@ -9,4 +9,6 @@ class Question < ActiveRecord::Base
   def send_question_confirmation
     QuestionMailer.question_confirmation(self.user).deliver
   end
+
+
 end
