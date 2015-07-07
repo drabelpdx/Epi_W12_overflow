@@ -2,7 +2,7 @@
 
 <h3><%= @question.body %></h3>
 
-<h4>Asked by: <%= @user.email %></h4>
+<h4>Asked by: <%= @question.user.email %></h4>
 
 <%= link_to "Add answer", new_question_answer_path(@question, @answer) %>
 
@@ -12,3 +12,11 @@
                                   :data => {:confirm => "Are you sure?",
                                             :method => 'delete'}%>
 <% end %>
+
+<ul>
+  <% @question.answers.each do |answer| %>
+    <li><%= answer.answer %> -- <small><%= answer.user.email %></small>
+    </li>
+    <hr>
+  <% end %>
+</ul>
