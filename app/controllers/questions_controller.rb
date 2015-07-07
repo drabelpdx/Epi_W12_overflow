@@ -9,6 +9,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
+    @user = current_user
     @question = current_user.questions.new(question_params)
     if @question.save
       flash[:notice] = "Your question has been posted."

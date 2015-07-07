@@ -4,6 +4,8 @@
 
 <h4>Asked by: <%= @user.email %></h4>
 
+<%= link_to "Add answer", new_question_answer_path(@question, @answer) %>
+
 <% if @question.user_id == current_user.id %>
   <%= link_to "Edit Question", edit_user_question_path(@user, @question) %>
   <%= link_to "Delete Question", user_question_path(@user, @question),

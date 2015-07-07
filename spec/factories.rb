@@ -9,4 +9,9 @@ FactoryGirl.define do
     body("I've been at this for days. Please help.")
     user_id(0)
   end
+
+  factory(:answer) do
+    answer('This is my answer')
+    question_id(0)
+  end
 end
